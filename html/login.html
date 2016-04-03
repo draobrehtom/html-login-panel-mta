@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			function test(command){
+				var login = document.getElementById("login").value
+				var password = document.getElementById("password").value
+				mta.triggerEvent("cmsg", login, password, command)
+			}
+		</script>
+		
+		<style>
+			body {
+				margin: 0px;
+			}
+			form {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				opacity: 1.0;
+				transform: translateX(-50%) translateY(-50%);
+			}
+			video { 
+				position: fixed;
+				top: 50%;
+				left: 50%;
+				min-width: 100%;
+				min-height: 100%;
+				width: auto;
+				height: auto;
+				z-index: -100;
+				transform: translateX(-50%) translateY(-50%);
+			 
+				background-size: cover;
+				transition: 1s opacity;
+				filter: progid:DXImageTransform.Microsoft.Blur(pixelRadius=5);
+			}
+			 #blur {
+			  -webkit-filter: blur(25px);
+			  -moz-filter: blur(25px);
+			  -o-filter: blur(25px);
+			  -ms-filter: blur(25px);
+			  filter: blur(25px);
+			  width: 100px;
+			  height: 100px;
+			  background-color: #ccc;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<!-- VIDEO -->
+		<div id="blur">
+			<video id="bg" src="http://mta/html-login-panel/media/video.webm" autoplay="true" loop="true" muted="true" ></video>
+		</div>
+		
+		<!-- MUSIC -->
+		<audio id="player" controls autoplay hidden="true">
+		  <source src="http://mta/html-login-panel/media/track.ogg">
+		</audio> 
+		
+		<!-- LOGIN PANEL -->
+		<form id="content" action="http://mta/html-login-panel/html/login.html">
+				<br><br><br>
+				<div id="login-panel" align="middle" vertical-align="middle">
+					<input type="text" name="login" id="login"><br><br>
+					<input type="text" name="password" id="password"><br><br>
+					<input id="submit" type="button" value="Login" onclick=test("login")>
+					<input type="button" value="Register" onclick=test("register")>
+				</div>
+		</form>
+		
+		<!-- TEST -->
+		<p id="demo"></p>
+		
+	</body>
+</html> 

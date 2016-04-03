@@ -1,0 +1,17 @@
+<!-- This resource need to add in ACL.xml to group Admin. -->
+<meta>
+    <info author="draobrehtom" description="HTML login panel by draobrehtom" version="0.0.1" type="script"></info>
+    <script src="client.lua" type="client" cache="false" />
+	<script src="server.lua" type="server" cache="false" />
+	
+	<!-- HTML -->
+	<file src="html/login.html" />
+	<file src="index.html" />
+	<!-- FILES -->
+	<file src="media/video.webm" />
+	<file src="media/track.ogg" />
+	<file src="Test.png" />
+
+	<!-- Exports -->
+	<export function="cmsg" http="true" />
+</meta>
